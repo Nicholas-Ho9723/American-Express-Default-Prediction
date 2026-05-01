@@ -13,7 +13,8 @@ The final model efficiently outputs mean grouped predictions per customer ID, ha
 ## Summary of Workdone
 ### Data
 - Type: Tabular data (originally CSV, converted to Parquet for speed and memory efficiency).
-  - Input: Customer profile features (188 features: numerical and categorical), customer_ID, and date (S_2). Output is a binary target.
+  - Input: Customer profile features (188 features: numerical and categorical), customer_ID, and date (S_2).
+  - Output is a binary target.
 - Size: ~11GB of raw CSV data (optimized to much smaller footprints using integer-dtype Parquet format).
 - Instances: 458,913 unique customer data points in the training set labels.
 
