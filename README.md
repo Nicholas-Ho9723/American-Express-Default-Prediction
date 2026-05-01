@@ -74,13 +74,10 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
 ### Software Setup
 - Required Packages:
 
-- pandas, numpy, matplotlib, seaborn
-
-- scikit-learn
-
-- pyarrow (Crucial for fast Parquet batching)
-
-- kagglehub
+    - pandas, numpy, matplotlib, seaborn
+    - scikit-learn
+    - pyarrow (Crucial for fast Parquet batching)
+    - kagglehub
 ### Installation:
 -Standard libraries are pre-installed on Google Colab. If running locally, you can install the required packages via:
 
