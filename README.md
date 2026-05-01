@@ -45,7 +45,7 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
 - Hyperparameters: Default probability is extracted specifically from the positive class tree votes (predict_proba()[:, 1]). Predictions are then grouped by customer_ID and averaged.
 
 ### Training
-- How you trained: The pipeline was developed and trained in Google Colab, utilizing the kagglehub library to pull datasets securely and Colab's RAM to cache batches.
+- The pipeline was developed and trained in Google Colab, utilizing the kagglehub library to pull datasets securely and Colab's RAM to cache batches.
 
 - Difficulties & Resolutions: The original .csv reading approach combined with pd.get_dummies in a loop took 20+ minutes and choked the RAM. This was resolved by swapping to an open-source Amex Parquet dataset (raddar/amex-data-integer-dtypes-parquet-format), reading the file iteratively via pyarrow.parquet.ParquetFile.iter_batches(), and strictly utilizing in-place operations with copy=False.
 
@@ -58,7 +58,7 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
 - Feature Engineering: Calculate moving averages, lags, or standard deviations over the monthly time series data for each customer_ID before aggregating.
 
 ### How to reproduce results
-- Open Google Colab (Recommended hardware: Standard CPU/RAM or High-RAM if doing massive feature engineering).
+- Open Google Colab 
 
 - Grab your Kaggle API key (kaggle.json).
 
@@ -67,7 +67,7 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
 - Run the data fetching and chunked inference scripts provided in the repository.
 
 ### Overview of files in repository
-- Kaggle.ipynb: The main Jupyter Notebook containing exploratory data analysis (EDA), Kaggle API authentication, feature distribution plotting, and the baseline data sampling.
+- AmexDP.ipynb: The main Jupyter Notebook containing exploratory data analysis (EDA), Kaggle API authentication, feature distribution plotting, and the baseline data sampling.
 
 - inference.py / inference.ipynb: Contains the optimized PyArrow streaming loop. Loads the Parquet test data in 250,000-row chunks, imputes, encodes, scales, runs Random Forest predictions, and generates submission.csv.
 
