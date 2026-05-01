@@ -53,8 +53,6 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
 - Working with 11GB+ tabular datasets requires moving away from traditional pandas.read_csv text parsing. Using Parquet formats and PyArrow batches combined with pre-computed dictionaries and float32 downcasting bridges the gap between memory safety (avoiding OOM) and maximum execution speed.
 
 ### Future Work
-- Algorithm Swapping: The next step is to substitute the Random Forest for a gradient-boosting algorithm like XGBoost, LightGBM, or CatBoost to potentially capture better metrics.
-
 - Feature Engineering: Calculate moving averages, lags, or standard deviations over the monthly time series data for each customer_ID before aggregating.
 
 ### How to reproduce results
