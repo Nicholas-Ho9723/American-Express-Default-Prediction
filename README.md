@@ -5,7 +5,7 @@ This repository holds an attempt to predict customer credit default probabilitie
 ## Overview
 The task, as defined by the Kaggle challenge, is to predict the probability that a customer will default on their credit card balance. The dataset contains a time series of 188 anonymized customer profile features, sampled at monthly intervals, to predict the binary default target (0 or 1).
 
-The approach in this repository formulates the problem as a binary classification task, using a Random Forest Classifier. Because the original dataset is massive (~11GB CSV), my pipeline uses PyArrow to stream heavily compressed Parquet files in batches of 250,000 rows. Inside the stream, we use fast in-place vectorized imputation, one-hot encoding, and float32 downcasting to run Random Forest predictions.
+The approach in this repository formulates the problem as a binary classification task, using a Random Forest Classifier. Because the original dataset is massive I used PyArrow to stream heavily compressed Parquet files in batches of 250,000 rows. Inside the stream, we use fast in-place vectorized imputation, one-hot encoding, and float32 downcasting to run Random Forest predictions.
 
 Summary of the performance achieved
 The final model efficiently outputs mean grouped predictions per customer ID, handling hundreds of thousands of rows in mere seconds, resulting in a robust submission file for Kaggle.
