@@ -1,4 +1,4 @@
-Amex Default Prediction Challenge
+###Amex Default Prediction Challenge###
 One Sentence Summary
 This repository holds an attempt to predict customer credit default probabilities using a Random Forest model on massive, chunked Parquet datasets from the Amex Default Prediction Kaggle challenge.
 
