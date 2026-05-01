@@ -67,9 +67,10 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
 - Run the data fetching and chunked inference scripts provided in the repository.
 
 ### Overview of files in repository
-- AmexDP.ipynb: The main Jupyter Notebook containing exploratory data analysis (EDA), Kaggle API authentication, feature distribution plotting, and the baseline data sampling.
+- AmexDP.ipynb:
+  - The main Jupyter Notebook containing exploratory data analysis (EDA), Kaggle API authentication, feature distribution plotting, and the baseline data sampling.
 
-- inference.py / inference.ipynb: Contains the optimized PyArrow streaming loop. Loads the Parquet test data in 250,000-row chunks, imputes, encodes, scales, runs Random Forest predictions, and generates submission.csv.
+  - Contains the optimized PyArrow streaming loop. Loads the Parquet test data in 250,000-row chunks, imputes, encodes, scales, runs Random Forest predictions, and generates submission.csv.
 
 ### Software Setup
 - Required Packages:
@@ -79,12 +80,11 @@ Data visualization was carried out on a 10,000-row sample to avoid Out-Of-Memory
     - pyarrow (Crucial for fast Parquet batching)
     - kagglehub
 ### Installation:
--Standard libraries are pre-installed on Google Colab. If running locally, you can install the required packages via:
+Standard libraries are pre-installed on Google Colab. If running locally, you can install the required packages via:
 
-- Bash
- -- pip install pandas numpy scikit-learn pyarrow matplotlib seaborn kagglehub
--- Data Access:
--- Data is pulled automatically via the kagglehub API in the script:
+- pip install pandas numpy scikit-learn pyarrow matplotlib seaborn kagglehub
+ Data Access:
+ Data is pulled automatically via the kagglehub API in the script:
 
 - Official: kagglehub.competition_download('amex-default-prediction')
 
