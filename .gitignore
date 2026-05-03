@@ -1,0 +1,8 @@
+# Ignore all CSV files to prevent pushing large datasets
+*.csv
+
+# ...Except for the submission file (the ! means "do not ignore")
+!submission.csv
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
