@@ -1,12 +1,12 @@
 # Amex Default Prediction: Baseline Model
 
-- **One Sentence Summary:** This repository holds an attempt to apply a baseline Logistic Regression model to predict credit card defaults using the dataset from the "American Express - Default Prediction" Kaggle challenge (https://www.kaggle.com/competitions/amex-default-prediction).
+I created a baseline Logistic Regression model to predict credit card defaults using the dataset from the "American Express - Default Prediction" Kaggle challenge (https://www.kaggle.com/competitions/amex-default-prediction).
 
 ## Overview
 
-- **Definition of the tasks / challenge:** The task, as defined by the Kaggle challenge, is to use a massive industrial-scale dataset containing anonymized customer profile information and time-series behavioral data to predict the probability that a customer will default on their credit card balance (binary classification: 0 = Paid, 1 = Defaulted).
-- **Your approach:** The approach in this repository formulates the problem as a binary classification task. Due to the massive size of the dataset (over 50GB) and significant outliers, we focused on robust preprocessing (handling missing values, IQR-based scaling, one-hot encoding) and utilized a Logistic Regression model as a fast, mathematically sound baseline.
-- **Summary of the performance achieved:** Our baseline model successfully processes the data and generates predictions using Kaggle's highly specific custom evaluation metric (a blend of the Gini Index and 4% Recall). 
+- **Definition of the tasks / challenge:** The task, as defined by the Kaggle challenge, is to use a massive industrial-scale dataset containing anonymized customer profile information and time-series behavioral data to predict the probability that a customer will default on their credit card balance.
+- **Your approach:** The approach in this repository formulates the problem as a binary classification task. Due to the massive size of the dataset and significant outliers, I focused on preprocessing (handling missing values, IQR-based scaling, one-hot encoding) and utilized a Logistic Regression model as a baseline.
+- **Summary of the performance achieved:** The baseline model successfully processes the data and generates predictions using Kaggle's evaluation metric. 
 
 ## Summary of Workdone
 
@@ -31,7 +31,9 @@
 ### Problem Formulation
 
 - **Define:**
-  - **Input / Output:** Input is a heavily preprocessed array of numerical and one-hot encoded categorical features. Output is a probability float representing the likelihood of default (Class 1).
+  - **Input / Output:**
+    - Input is a heavily preprocessed array of numerical and one-hot encoded categorical features.
+    - Output is a probability float representing the likelihood of default (Class 1).
   - **Models:** Logistic Regression was chosen as the primary baseline model because it is computationally efficient, handles scaled numerical data well, and provides interpretable probabilities required for the custom metric.
   - **Loss, Optimizer, other Hyperparameters:** Trained using the default 'lbfgs' solver, with `max_iter=1000` to ensure mathematical convergence, and `class_weight='balanced'` to account for the heavy class imbalance (74% Paid vs 26% Default).
 
@@ -68,7 +70,7 @@
 
 ### Software Setup
 
-- **Required Packages:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `kagglehub` (optional for API downloads).
+- **Required Packages:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `kagglehub`.
 - **Installation:** Install requirements via pip:
   `pip install pandas numpy matplotlib seaborn scikit-learn kagglehub`
 
@@ -81,10 +83,4 @@
 
 - Open `Amex_Baseline_Pipeline.ipynb` and run the cells sequentially. The notebook handles data cleaning, model fitting, and metric evaluation automatically. 
 
-### Performance Evaluation
 
-- The notebook includes a dedicated cell containing the official `amex_metric()` Python function. It will automatically calculate and print your Kaggle score against the validation set after the model finishes training.
-
-## Citations
-
-- American Express. (2022). *American Express - Default Prediction*. Kaggle. https://kaggle.com/competitions/amex-default-prediction
